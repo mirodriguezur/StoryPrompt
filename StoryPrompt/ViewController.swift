@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         numberLabel.text = "Number: \(Int(sender.value))"
         storyPrompt.number = Int(sender.value)
     }
+    
     @IBAction func changeStoryType(_ sender: UISegmentedControl) {
         if let genre = StoryPrompts.Genre(rawValue: sender.selectedSegmentIndex){
             storyPrompt.genre = genre
@@ -29,6 +30,12 @@ class ViewController: UIViewController {
         }
         print(storyPrompt.genre)
     }
+    
+    @IBAction func generateStoryPrompt(_ sender: Any) {
+        updateStoryPrompt()
+        print(storyPrompt)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +47,19 @@ class ViewController: UIViewController {
         storyPrompt.number = Int(numberSlider.value)
         print(storyPrompt)
     }
+    
+    func updateStoryPrompt(){
+        storyPrompt.noun = nounTextField.text ?? ""
+        storyPrompt.adjective = adjectiveTextField.text ?? ""
+        storyPrompt.verb = verbTextField.text ?? ""
+    }
+}
 
-
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        updateStoryPrompt()
+        return true
+    }
 }
 
