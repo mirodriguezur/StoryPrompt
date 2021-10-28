@@ -6,14 +6,16 @@
 //
 
 import UIKit
+import PhotosUI
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
 
     @IBOutlet weak var nounTextField: UITextField!
     @IBOutlet weak var adjectiveTextField: UITextField!
     @IBOutlet weak var verbTextField: UITextField!
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var numberSlider: UISlider!
+    @IBOutlet weak var storyPromptImageView: UIImageView!
     
     let storyPrompt = StoryPromptEntry()
     
@@ -45,13 +47,24 @@ class ViewController: UIViewController {
         storyPrompt.adjective = "smelly"
         storyPrompt.verb = "burps"
         storyPrompt.number = Int(numberSlider.value)
-        print(storyPrompt)
+        storyPromptImageView.isUserInteractionEnabled = true  //Habilitamos interaccion del usuario
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(changeImage)) //Se crea un reconocedor de gestos de tipo toque.  ChangeImage es un metodo.
+        storyPromptImageView.addGestureRecognizer(gestureRecognizer) //Agregamos nuestro reconocedor de gestos a nuestra vista de imagen
     }
     
     func updateStoryPrompt(){
         storyPrompt.noun = nounTextField.text ?? ""
         storyPrompt.adjective = adjectiveTextField.text ?? ""
         storyPrompt.verb = verbTextField.text ?? ""
+    }
+    
+    @objc func changeImage() {
+        var configuration = PHPickerConfiguration()
+        configuration.filter = .images
+        configuration.selectionLimit = 1
+        let controller = PHPickerViewController(configuration: configuration)  //Creamos un controlador de vista de selector pH
+        controller.delegate = self   //Nos asignamos a nosostros mismos como delegados
+        present(controller, animated: true)    //Nos permite presentar otro controlador de vista (el selector)
     }
 }
 
@@ -60,6 +73,26 @@ extension ViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         updateStoryPrompt()
         return true
+    }
+}
+
+extension ViewController: PHPickerViewControllerDelegate{
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        if !results.isEmpty {
+            let result = results.first!
+            let itemProvider = result.itemProvider
+            if itemProvider.canLoadObject(ofClass: UIImage.self){
+                itemProvider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
+                    guard let image = image as? UIImage else {
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        self?.storyPromptImageView.image = image
+                    }
+                }
+            }
+            
+        }
     }
 }
 
