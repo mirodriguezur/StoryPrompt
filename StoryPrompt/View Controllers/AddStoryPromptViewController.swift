@@ -36,7 +36,7 @@ class AddStoryPromptViewController: UIViewController{
     @IBAction func generateStoryPrompt(_ sender: Any) {
         updateStoryPrompt()
         if storyPrompt.isValid() {
-            print(storyPrompt)
+            performSegue(withIdentifier: "StoryPrompt", sender: nil)
         } else {
             let alert = UIAlertController(title: "Invalid Story Prompt", message: "Please fill out all of the fields", preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok", style: .default, handler: {action in })
@@ -50,9 +50,6 @@ class AddStoryPromptViewController: UIViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         numberSlider.value = 7.5
-        storyPrompt.noun = "toaster"
-        storyPrompt.adjective = "smelly"
-        storyPrompt.verb = "burps"
         storyPrompt.number = Int(numberSlider.value)
         storyPromptImageView.isUserInteractionEnabled = true  //Habilitamos interaccion del usuario
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(changeImage)) //Se crea un reconocedor de gestos de tipo toque.  ChangeImage es un metodo.

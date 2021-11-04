@@ -125,7 +125,7 @@
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Generate Stroy Prompt"/>
                                         <connections>
-                                            <segue destination="gk9-Sk-gwB" kind="show" identifier="StoryPrompt" id="WOv-Aa-o5v"/>
+                                            <action selector="generateStoryPrompt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qBN-fc-F9O"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -147,6 +147,7 @@
                         <outlet property="numberSlider" destination="IWC-Cx-IBL" id="PVI-fk-4vC"/>
                         <outlet property="storyPromptImageView" destination="Ufr-Rw-t2b" id="VHT-J4-nMe"/>
                         <outlet property="verbTextField" destination="tLK-Oq-Jna" id="wyq-7K-K9w"/>
+                        <segue destination="gk9-Sk-gwB" kind="show" identifier="StoryPrompt" id="bJe-bn-244"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
