@@ -101,5 +101,14 @@ extension AddStoryPromptViewController: PHPickerViewControllerDelegate{
             
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "StoryPrompt" {
+            guard let storyPromptViewController = segue.destination as? StoryPromptViewController else {
+                return
+            }
+            storyPromptViewController.storyPrompt = storyPrompt
+        }
+    }
+    
 }
 

@@ -125,7 +125,7 @@
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Generate Stroy Prompt"/>
                                         <connections>
-                                            <segue destination="gk9-Sk-gwB" kind="show" id="WOv-Aa-o5v"/>
+                                            <segue destination="gk9-Sk-gwB" kind="show" identifier="StoryPrompt" id="WOv-Aa-o5v"/>
                                         </connections>
                                     </button>
                                 </subviews>
