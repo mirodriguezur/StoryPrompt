@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C1AD9702734F1E1008CCBBF /* StoryPromptTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1AD96F2734F1E1008CCBBF /* StoryPromptTableViewController.swift */; };
 		4C303F12272919A1001D5238 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C303F11272919A1001D5238 /* AppDelegate.swift */; };
 		4C303F14272919A1001D5238 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C303F13272919A1001D5238 /* SceneDelegate.swift */; };
 		4C303F16272919A1001D5238 /* AddStoryPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C303F15272919A1001D5238 /* AddStoryPromptViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C1AD96F2734F1E1008CCBBF /* StoryPromptTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StoryPromptTableViewController.swift; path = ../StoryPromptTableViewController.swift; sourceTree = "<group>"; };
 		4C303F0E272919A1001D5238 /* StoryPrompt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryPrompt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C303F11272919A1001D5238 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C303F13272919A1001D5238 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		4C3E4134272C5CDE00F79172 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4C1AD96F2734F1E1008CCBBF /* StoryPromptTableViewController.swift */,
 				4C3E4131272C5CC000F79172 /* StoryPromptViewController.swift */,
 				4C303F15272919A1001D5238 /* AddStoryPromptViewController.swift */,
 			);
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C1AD9702734F1E1008CCBBF /* StoryPromptTableViewController.swift in Sources */,
 				4C3E4132272C5CC000F79172 /* StoryPromptViewController.swift in Sources */,
 				4C303F2A27291B8D001D5238 /* StoryPrompts.swift in Sources */,
 				4C303F16272919A1001D5238 /* AddStoryPromptViewController.swift in Sources */,

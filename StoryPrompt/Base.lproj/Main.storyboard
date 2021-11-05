@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="3jS-0b-m1G">
-                                <rect key="frame" x="20" y="145" width="374" height="652.5"/>
+                                <rect key="frame" x="20" y="101" width="374" height="652.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Qte-YM-XBf">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -152,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="55.580357142857139"/>
+            <point key="canvasLocation" x="991" y="-465"/>
         </scene>
         <!--Story Prompt View Controller-->
         <scene sceneID="ppK-MI-609">
@@ -207,14 +207,58 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4V3-0t-VxR"/>
+                        <segue destination="GqG-AP-g44" kind="relationship" relationship="rootViewController" id="3Dj-6J-KOV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="taP-Wy-Shx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="55.580357142857139"/>
+            <point key="canvasLocation" x="-420" y="41"/>
+        </scene>
+        <!--Story Prompt Table View Controller-->
+        <scene sceneID="rfx-Ek-DNc">
+            <objects>
+                <tableViewController id="GqG-AP-g44" customClass="StoryPromptTableViewController" customModule="StoryPrompt" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eol-J5-le7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoryPromptCell" textLabel="nmh-5c-C98" style="IBUITableViewCellStyleDefault" id="aZY-Ao-02D">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aZY-Ao-02D" id="iWh-2u-nDj">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nmh-5c-C98">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GqG-AP-g44" id="JoF-ZR-apB"/>
+                            <outlet property="delegate" destination="GqG-AP-g44" id="sBy-Qw-c8U"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Oe7-f2-ARO"/>
+                    <connections>
+                        <segue destination="gk9-Sk-gwB" kind="show" identifier="ShowStoryPrompt" id="XM5-cB-9PH"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hZX-a7-DJv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="41"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="XM5-cB-9PH"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="10.circle" catalog="system" width="128" height="121"/>
         <image name="5.circle" catalog="system" width="128" height="121"/>
@@ -222,6 +266,9 @@
         <image name="object-object_box-of-books" width="1000" height="1000"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
