@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="3jS-0b-m1G">
-                                <rect key="frame" x="20" y="101" width="374" height="652.5"/>
+                                <rect key="frame" x="20" y="145" width="374" height="652.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Qte-YM-XBf">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -152,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="991" y="-465"/>
+            <point key="canvasLocation" x="1172" y="-309"/>
         </scene>
         <!--Story Prompt View Controller-->
         <scene sceneID="ppK-MI-609">
@@ -212,7 +212,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="taP-Wy-Shx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-420" y="41"/>
+            <point key="canvasLocation" x="-422" y="56"/>
         </scene>
         <!--Story Prompt Table View Controller-->
         <scene sceneID="rfx-Ek-DNc">
@@ -246,14 +246,20 @@
                             <outlet property="delegate" destination="GqG-AP-g44" id="sBy-Qw-c8U"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Oe7-f2-ARO"/>
+                    <navigationItem key="navigationItem" id="Oe7-f2-ARO">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lOW-Sj-azA">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="rUJ-Aj-93z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="gk9-Sk-gwB" kind="show" identifier="ShowStoryPrompt" id="XM5-cB-9PH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZX-a7-DJv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364" y="41"/>
+            <point key="canvasLocation" x="354" y="56"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
