@@ -104,6 +104,7 @@ extension AddStoryPromptViewController: PHPickerViewControllerDelegate{
                 return
             }
             storyPromptViewController.storyPrompt = storyPrompt
+            storyPromptViewController.isNewStoryPrompt = true
         }
     }
     
