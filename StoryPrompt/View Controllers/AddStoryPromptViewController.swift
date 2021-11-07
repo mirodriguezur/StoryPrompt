@@ -43,7 +43,11 @@ class AddStoryPromptViewController: UIViewController{
             alert.addAction(action)
             present(alert, animated: true)
         }
-            }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     
     override func viewDidLoad() {
@@ -54,9 +58,10 @@ class AddStoryPromptViewController: UIViewController{
         storyPromptImageView.isUserInteractionEnabled = true  //Habilitamos interaccion del usuario
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(changeImage)) //Se crea un reconocedor de gestos de tipo toque.  ChangeImage es un metodo.
         storyPromptImageView.addGestureRecognizer(gestureRecognizer) //Agregamos nuestro reconocedor de gestos a nuestra vista de imagen
+        NotificationCenter.default.addObserver(self, selector: #selector(updateStoryPrompt), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
     
-    func updateStoryPrompt(){
+    @objc func updateStoryPrompt() {
         storyPrompt.noun = nounTextField.text ?? ""
         storyPrompt.adjective = adjectiveTextField.text ?? ""
         storyPrompt.verb = verbTextField.text ?? ""
@@ -75,7 +80,6 @@ class AddStoryPromptViewController: UIViewController{
 extension AddStoryPromptViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        updateStoryPrompt()
         return true
     }
 }
